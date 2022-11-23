@@ -7,7 +7,7 @@ public class ObjectProperties : MonoBehaviour
 
 
     private float xRange = 15;
-    private float yRange = 2;
+  
 
     // Update is called once per frame
     void Update()

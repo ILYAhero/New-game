@@ -350,6 +350,7 @@
 "Assets/Scripts/DragObject.cs"
 "Assets/Scripts/NewBehaviourScript.cs"
 "Assets/Scripts/ObjectProperties.cs"
+"Assets/Scripts/SpawnManager.cs"
 -langversion:9.0
 
 /deterministic

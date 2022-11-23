@@ -9,9 +9,10 @@ public class DragObject : MonoBehaviour
     private float mZCoord;
 
     private void OnMouseDown()
-    {
+    {transform.position = new Vector3(transform.position.x, 15, transform.position.z);
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         mOffset = gameObject.transform.position - GetMouseWorldPos();
+        
     }
 
     private Vector3 GetMouseWorldPos()
@@ -25,15 +26,10 @@ public class DragObject : MonoBehaviour
     
     private void OnMouseDrag()
     {
-        transform.position = GetMouseWorldPos() + mOffset;
+        
+        transform.position = GetMouseWorldPos();
     }
 
-    private void Update()
-    {
-        Vector3 mousePoint = Input.mousePosition;
-        if (mousePoint.y < 5)
-            {
-            mousePoint.y = 2;
-        }
-    }
+
+    
 }
