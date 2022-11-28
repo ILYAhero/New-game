@@ -7,11 +7,18 @@ public class DragObject : MonoBehaviour
 
     private Vector3 mOffset;
     private float mZCoord;
+    private GameManager gameManager;
 
+    void Start()
+    {
+        gameManager = GameObject.Find("Main Camera").GetComponent<GameManager>();
+    }
     private void OnMouseDown()
-    {transform.position = new Vector3(transform.position.x, 15, transform.position.z);
+    { if (gameManager.gameIsActive == true)
+        { transform.position = new Vector3(transform.position.x, 15, transform.position.z);
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         mOffset = gameObject.transform.position - GetMouseWorldPos();
+         }
         
     }
 
@@ -26,8 +33,8 @@ public class DragObject : MonoBehaviour
     
     private void OnMouseDrag()
     {
-        
-        transform.position = GetMouseWorldPos();
+        if (gameManager.gameIsActive == true)
+            transform.position = GetMouseWorldPos();
     }
 
 
