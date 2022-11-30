@@ -15,7 +15,8 @@ public class DragObject : MonoBehaviour
     }
     private void OnMouseDown()
     { if (gameManager.gameIsActive == true)
-        { transform.position = new Vector3(transform.position.x, 15, transform.position.z);
+        { transform.position = new Vector3(transform.position.x, 16, transform.position.z);
+            
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         mOffset = gameObject.transform.position - GetMouseWorldPos();
          }
@@ -35,6 +36,27 @@ public class DragObject : MonoBehaviour
     {
         if (gameManager.gameIsActive == true)
             transform.position = GetMouseWorldPos();
+
+        if (transform.position.x < -51)
+        {
+            transform.position = new Vector3(-51, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.x > 0)
+        {
+            transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        }
+        if (transform.position.z < -12.5f)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -12.5f);
+        }
+
+        if (transform.position.z > 12.5f)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 12.5f);
+        }
+
+
     }
 
 

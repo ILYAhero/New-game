@@ -11,8 +11,8 @@ public class SpawnManager : MonoBehaviour
 
 
     private float spawnRangeX = 14;
-    private float spawnPosY = 2.5f;
-    private float spawnRangeZ = 14;
+    private float spawnPosY = 3;
+    private float spawnRangeZ = 15;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +20,13 @@ public class SpawnManager : MonoBehaviour
         for (int i = 1; i < 10; i++)
         {
             int GoodObjectsIndex = Random.Range(0, GoodObjects.Count);
-            Vector3 spawnPosGood = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), spawnPosY, Random.Range(-spawnRangeZ, spawnRangeZ));
+            Vector3 spawnPosGood = new Vector3(Random.Range(-32, 5), spawnPosY, Random.Range(-spawnRangeZ, spawnRangeZ));
             Instantiate(GoodObjects[GoodObjectsIndex], spawnPosGood, GoodObjects[GoodObjectsIndex].transform.rotation);
         }
         for (int i = 1; i < 60; i++)
         {
             int BadObjectsIndex = Random.Range(0, BadObjects.Count);
-            Vector3 spawnPosBad = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), spawnPosY, Random.Range(-spawnRangeZ, spawnRangeZ));
+            Vector3 spawnPosBad = new Vector3(Random.Range(-32, 5), spawnPosY, Random.Range(-spawnRangeZ, spawnRangeZ));
             Instantiate(BadObjects[BadObjectsIndex], spawnPosBad, BadObjects[BadObjectsIndex].transform.rotation);
         }
     }
