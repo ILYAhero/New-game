@@ -16,9 +16,9 @@ public class ObjectProperties : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < -26.5f)
+        if (transform.position.x < -51)
         {
-            //transform.position = new Vector3(-29, transform.position.y, transform.position.z);
+            transform.position = new Vector3(-51, transform.position.y, transform.position.z);
         }
 
         if (transform.position.x > xRange)

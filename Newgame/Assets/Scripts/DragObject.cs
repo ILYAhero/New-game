@@ -14,8 +14,8 @@ public class DragObject : MonoBehaviour
         gameManager = GameObject.Find("Main Camera").GetComponent<GameManager>();
     }
     private void OnMouseDown()
-    { if (gameManager.gameIsActive == true)
-        { transform.position = new Vector3(transform.position.x, 16, transform.position.z);
+    { if (gameManager.gameIsActive == true && transform.position.y > 2)
+        { transform.position = new Vector3(transform.position.x, 20, transform.position.z);
             
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
         mOffset = gameObject.transform.position - GetMouseWorldPos();
@@ -34,7 +34,7 @@ public class DragObject : MonoBehaviour
     
     private void OnMouseDrag()
     {
-        if (gameManager.gameIsActive == true)
+        if (gameManager.gameIsActive == true && transform.position.y > 2)
             transform.position = GetMouseWorldPos();
 
         if (transform.position.x < -51)
